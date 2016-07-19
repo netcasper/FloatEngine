@@ -157,9 +157,18 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
             chartList.add(item);
         }
 
-        fragmentMin = new ChartListFragment(ChartType.MINUTE, chartList);
-        fragmentDay90 = new ChartListFragment(ChartType.DAY90, chartList);
-        fragmentDay180 = new ChartListFragment(ChartType.DAY180, chartList);
+        //fragmentMin = new ChartListFragment(ChartType.MINUTE, chartList);
+        //fragmentDay90 = new ChartListFragment(ChartType.DAY90, chartList);
+        //fragmentDay180 = new ChartListFragment(ChartType.DAY180, chartList);
+        fragmentMin = new ChartListFragment();
+        fragmentMin.setChartType(ChartType.MINUTE);
+        fragmentMin.setChartList(chartList);
+        fragmentDay90 = new ChartListFragment();
+        fragmentDay90.setChartType(ChartType.DAY90);
+        fragmentDay90.setChartList(chartList);
+        fragmentDay180 = new ChartListFragment();
+        fragmentDay180.setChartType(ChartType.DAY180);
+        fragmentDay180.setChartList(chartList);
 
         titleList = new ArrayList<String>();
         fragmentList = new ArrayList<ChartListFragment>();

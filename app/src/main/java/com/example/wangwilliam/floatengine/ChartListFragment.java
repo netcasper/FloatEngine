@@ -29,10 +29,7 @@ public class ChartListFragment extends Fragment {
     }
     public void setChartType(ChartType charType) {this.chartType = charType; }
 
-    public ChartListFragment(ChartType chartType, List<ChartItem> chartList){
-        super();
-        this.chartType = chartType;
-        this.chartList = chartList;
+    public ChartListFragment(){
     }
 
     @Override
