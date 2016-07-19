@@ -59,11 +59,19 @@ public class HTTPDataProvider {
                                     java.text.DecimalFormat df = new java.text.DecimalFormat("#"); // 保留小数点后2位，其他不变
                                     sb.append(df.format(d).toString());
                                 } else {
-                                    sb.append(strList[1]);
+                                    sb.append((strList.length>6)?strList[3]:strList[1]);
                                 }
                                 sb.append(engineSettings.priceSeparator);
                             }
-                            sb.append(strList[3]);
+                            if (strList.length > 6){
+                                double previous = Double.parseDouble(strList[2]);
+                                double current = Double.parseDouble(strList[3]);
+                                double ratio = (current - previous) / current * 100.00;
+                                java.text.DecimalFormat df = new java.text.DecimalFormat("0.00");
+                                sb.append(df.format(ratio).toString());
+                            }else{
+                                sb.append(strList[3]);
+                            }
                             sb.append(engineSettings.itemSeparator);
                         }
                         sb.delete(sb.length()-1, sb.length());
@@ -131,12 +139,17 @@ public class HTTPDataProvider {
         sb.append(EngineConstants.sinaURL);
         for (int i=0; i<codes.length; i++) {
             if (codes[i].length() != 6) continue;
-            if (codes[i].equals(EngineConstants.szzs)
-                    || codes[i].charAt(0) == '5'
-                    || codes[i].charAt(0) == '6'){
-                sb.append(EngineConstants.sinaPrefixShortSH);
-            } else {
-                sb.append(EngineConstants.sinaPrefixShortSZ);
+            if (codes[i].equals(EngineConstants.cybETF)){
+                sb.append(EngineConstants.sinaPrefixLongSZ);
+            }else{
+                if (codes[i].equals(EngineConstants.szzs)
+                        || codes[i].charAt(0) == '5'
+                        || codes[i].charAt(0) == '6'){
+                    sb.append(EngineConstants.sinaPrefixShortSH);
+                } else {
+                    sb.append(EngineConstants.sinaPrefixShortSZ);
+                }
+
             }
             sb.append(codes[i]);
             sb.append(',');

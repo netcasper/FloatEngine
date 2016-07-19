@@ -20,21 +20,23 @@ public class EngineConstants {
 
     public static final int defaultPositionX = 200;
     public static final int defaultPositionY = 10;
-    public static final String defaultItemSeparartor = " ";
+    public static final String defaultItemSeparartor = "|";
     public static final String defaultPriceSeparator = "/";
     public static final boolean defaultSimpleMode = false;
     public static final int defaultInterval = 1000;
-    public static final String defaultFloatList = "159915 000001";
-    public static final String defaultChartList = "159915 000001";
+    public static final String defaultFloatList = "159915 000001 510050";
+    public static final String defaultChartList = "159915 000001 510050";
     public static final boolean defaultChartMinute = true;
     public static final boolean defaultChartDay90 = true;
-    public static final boolean defaultChartDay180 = false;
+    public static final boolean defaultChartDay180 = true;
 
     // HTTPDataProvider
     public static final String szzs = "000001";
+    public static final String cybETF = "159915";
     public static final String sinaURL = "http://hq.sinajs.cn/list=";
     public static final String sinaPrefixShortSH = "s_sh";
     public static final String sinaPrefixShortSZ = "s_sz";
+    public static final String sinaPrefixLongSZ = "sz";
 
     // HttpPicProvider
     public static final String http126ChartMinutePrefix = "http://img1.money.126.net/chart/hs/time/540x360/";

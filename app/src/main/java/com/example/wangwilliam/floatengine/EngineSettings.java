@@ -29,7 +29,7 @@ public class EngineSettings {
             positionX = sp.getInt(EngineConstants.keyPositionX, EngineConstants.defaultPositionX);
             positionY = sp.getInt(EngineConstants.keyPositionY, EngineConstants.defaultPositionY);
             itemSeparator = sp.getString(EngineConstants.keyItemSeparator, EngineConstants.defaultItemSeparartor);
-            priceSeparator = sp.getString(EngineConstants.keyPriceSeparator, EngineConstants.defaultItemSeparartor);
+            priceSeparator = sp.getString(EngineConstants.keyPriceSeparator, EngineConstants.defaultPriceSeparator);
             simpleMode = sp.getBoolean(EngineConstants.keySimpleMode, EngineConstants.defaultSimpleMode);
             interval = sp.getInt(EngineConstants.keyInterval, EngineConstants.defaultInterval);
             floatList = sp.getString(EngineConstants.keyFloatList, EngineConstants.defaultFloatList);
